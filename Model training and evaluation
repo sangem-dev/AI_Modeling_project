@@ -1,0 +1,23 @@
+# Task 2: Model Training and Evaluation
+
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# Train Decision Tree
+dt_model = DecisionTreeClassifier()
+dt_model.fit(X_train, y_train)
+
+# Predict and evaluate Decision Tree
+dt_preds = dt_model.predict(X_test)
+dt_acc = accuracy_score(y_test, dt_preds)
+print("Decision Tree Accuracy:", dt_acc)
+
+# Train Logistic Regression
+lr_model = LogisticRegression(max_iter=10000)
+lr_model.fit(X_train, y_train)
+
+# Predict and evaluate Logistic Regression
+lr_preds = lr_model.predict(X_test)
+lr_acc = accuracy_score(y_test, lr_preds)
+print("Logistic Regression Accuracy:", lr_acc)
